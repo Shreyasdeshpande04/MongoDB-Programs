@@ -1,3 +1,5 @@
+---
+
 # 🔢 MongoDB Data Types & Operators
 
 ## 📚 Data Types in MongoDB
@@ -7,6 +9,7 @@
 **Syntax:** `"value"`
 **Example:**
 {name: "Rahul"}
+// Stores a text value "Rahul" in the field `name`
 
 ---
 
@@ -15,6 +18,7 @@
 **Syntax:** `NumberInt(value)` or plain number
 **Example:**
 {age: 22, price: 99.99}
+// Stores numeric values: 22 as integer, 99.99 as double
 
 ---
 
@@ -23,6 +27,7 @@
 **Syntax:** `true / false`
 **Example:**
 {isActive: true}
+// Stores a boolean value true in the field `isActive`
 
 ---
 
@@ -31,6 +36,7 @@
 **Syntax:** `new Date("<YYYY-MM-DD>")`
 **Example:**
 {createdAt: new Date("2025-08-25")}
+// Stores a date object with value 25th Aug 2025
 
 ---
 
@@ -39,6 +45,7 @@
 **Syntax:** `[value1, value2, ...]`
 **Example:**
 {hobbies: \["reading", "coding", "traveling"]}
+// Stores multiple values as an array in the field `hobbies`
 
 ---
 
@@ -47,6 +54,7 @@
 **Syntax:** `{ key: value, key2: value }`
 **Example:**
 {address: {city: "Mumbai", pincode: 400001}}
+// Stores an embedded document with `city` and `pincode` fields
 
 ---
 
@@ -60,6 +68,7 @@
 db.collection.find({ field: { \$eq: value } })
 **Example:**
 db.students.find({ age: { \$eq: 22 } })
+// Finds all students whose age is exactly 22
 
 ---
 
@@ -69,6 +78,7 @@ db.students.find({ age: { \$eq: 22 } })
 db.collection.find({ field: { \$ne: value } })
 **Example:**
 db.students.find({ age: { \$ne: 18 } })
+// Finds all students whose age is not equal to 18
 
 ---
 
@@ -78,6 +88,7 @@ db.students.find({ age: { \$ne: 18 } })
 db.collection.find({ field: { \$gt: value } })
 **Example:**
 db.students.find({ age: { \$gt: 20 } })
+// Finds all students whose age is greater than 20
 
 ---
 
@@ -87,6 +98,7 @@ db.students.find({ age: { \$gt: 20 } })
 db.collection.find({ field: { \$lt: value } })
 **Example:**
 db.students.find({ age: { \$lt: 25 } })
+// Finds all students whose age is less than 25
 
 ---
 
@@ -96,6 +108,7 @@ db.students.find({ age: { \$lt: 25 } })
 db.collection.find({ field: { \$gte: value } })
 **Example:**
 db.students.find({ age: { \$gte: 21 } })
+// Finds all students whose age is greater than or equal to 21
 
 ---
 
@@ -105,6 +118,7 @@ db.students.find({ age: { \$gte: 21 } })
 db.collection.find({ field: { \$lte: value } })
 **Example:**
 db.students.find({ age: { \$lte: 23 } })
+// Finds all students whose age is less than or equal to 23
 
 ---
 
@@ -116,6 +130,7 @@ db.students.find({ age: { \$lte: 23 } })
 db.collection.find({ \$and: \[ { field1: value1 }, { field2: value2 } ] })
 **Example:**
 db.students.find({ \$and: \[ { age: { \$gte: 20 } }, { isActive: true } ] })
+// Finds all students aged 20 or older AND who are active
 
 ---
 
@@ -125,6 +140,7 @@ db.students.find({ \$and: \[ { age: { \$gte: 20 } }, { isActive: true } ] })
 db.collection.find({ \$or: \[ { field1: value1 }, { field2: value2 } ] })
 **Example:**
 db.students.find({ \$or: \[ { age: 18 }, { age: 25 } ] })
+// Finds all students whose age is either 18 OR 25
 
 ---
 
@@ -134,6 +150,7 @@ db.students.find({ \$or: \[ { age: 18 }, { age: 25 } ] })
 db.collection.find({ \$nor: \[ { field1: value1 }, { field2: value2 } ] })
 **Example:**
 db.students.find({ \$nor: \[ { age: 18 }, { isActive: false } ] })
+// Finds all students who are NOT 18 years old AND NOT inactive
 
 ---
 
@@ -143,3 +160,6 @@ db.students.find({ \$nor: \[ { age: 18 }, { isActive: false } ] })
 db.collection.find({ field: { \$not: { condition } } })
 **Example:**
 db.students.find({ age: { \$not: { \$gt: 25 } } })
+// Finds all students whose age is NOT greater than 25
+
+---
