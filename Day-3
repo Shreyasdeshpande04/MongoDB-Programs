@@ -1,0 +1,81 @@
+## 📘 Cursor Methods
+
+### 1️⃣ `count()`
+
+**Syntax:**
+db.collection.find(query).count()
+
+**Example:**
+db.students.find({ age: { \$gte: 20 } }).count()
+// Counts how many students are 20 years or older
+
+---
+
+### 2️⃣ `limit(n)`
+
+**Syntax:**
+db.collection.find(query).limit(n)
+
+**Example:**
+db.students.find().limit(5)
+// Returns only the first 5 student documents
+
+---
+
+### 3️⃣ `skip(n)`
+
+**Syntax:**
+db.collection.find(query).skip(n)
+
+**Example:**
+db.students.find().skip(5)
+// Skips the first 5 documents and shows the rest
+
+---
+
+### 4️⃣ `sort({ field: 1 / -1 })`
+
+**Syntax:**
+db.collection.find(query).sort({ field: 1 })   // Ascending
+db.collection.find(query).sort({ field: -1 })  // Descending
+
+**Example:**
+db.students.find().sort({ age: -1 })
+// Sorts students by age in descending order (oldest first)
+
+---
+
+## 🧩 Element Operators
+
+### 1️⃣ `$exists`
+
+**Syntax:**
+db.collection.find({ field: { \$exists: true/false } })
+
+**Example:**
+db.students.find({ email: { \$exists: true } })
+// Finds all students who have an "email" field
+
+---
+
+### 2️⃣ `$type`
+
+**Syntax:**
+db.collection.find({ field: { \$type: "<dataType>" } })
+
+**Example:**
+db.products.find({ price: { \$type: "number" } })
+// Finds all products where "price" is stored as a number
+
+---
+
+### 3️⃣ `$size`
+
+**Syntax:**
+db.collection.find({ arrayField: { \$size: n } })
+
+**Example:**
+db.users.find({ cart: { \$size: 3 } })
+// Finds users whose "cart" array contains exactly 3 items
+
+---
