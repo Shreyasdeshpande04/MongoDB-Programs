@@ -1,104 +1,159 @@
+---
+
 # 📚 MongoDB Basic Commands
 
 ## 1️⃣ Show Databases
 
 **Syntax:**
+
+```js
 show dbs
+```
 
 **Example:**
-show dbs
 
-# Output → admin, config, local
+```js
+show dbs
+// Shows all available databases → admin, config, local
+```
 
 ---
 
 ## 2️⃣ Use Database
 
 **Syntax:**
+
+```js
 use <dbname>
+```
 
 **Example:**
-use studentDB
 
-# Switches to studentDB (creates if not exists)
+```js
+use studentDB
+// Switches to studentDB (creates if not exists)
+```
 
 ---
 
 ## 3️⃣ Create Collection
 
 **Syntax:**
+
+```js
 db.createCollection("<name>")
+```
 
 **Example:**
+
+```js
 db.createCollection("students")
+// Creates a new collection named "students"
+```
 
 ---
 
 ## 4️⃣ Drop Database
 
 **Syntax:**
+
+```js
 db.dropDatabase()
+```
 
 **Example:**
-db.dropDatabase()
 
-# Deletes the current database
+```js
+db.dropDatabase()
+// Deletes the currently selected database
+```
 
 ---
 
 ## 5️⃣ Show Collections
 
 **Syntax:**
+
+```js
 show collections
+```
 
 **Example:**
-show collections
 
-# Output → students, teachers
+```js
+show collections
+// Lists all collections in the current DB → students, teachers
+```
 
 ---
 
 ## 6️⃣ Drop Collection
 
 **Syntax:**
+
+```js
 db.<collection>.drop()
+```
 
 **Example:**
+
+```js
 db.students.drop()
+// Deletes the "students" collection
+```
 
 ---
 
 ## 7️⃣ Insert One Document
 
 **Syntax:**
+
+```js
 db.<collection>.insertOne({ key: value })
+```
 
 **Example:**
+
+```js
 db.students.insertOne({ name: "Rahul", age: 22 })
+// Inserts one student record into "students" collection
+```
 
 ---
 
 ## 8️⃣ Insert Many Documents
 
 **Syntax:**
-db.<collection>.insertMany(\[{...}, {...}])
+
+```js
+db.<collection>.insertMany([{...}, {...}])
+```
 
 **Example:**
-db.students.insertMany(\[
-{ name: "Shreyas", age: 21 },
-{ name: "Amit", age: 21 },
-.....
+
+```js
+db.students.insertMany([
+  { name: "Shreyas", age: 21 },
+  { name: "Amit", age: 21 }
 ])
+// Inserts multiple student records in one go
+```
 
 ---
 
 ## 9️⃣ Find Documents
 
 **Syntax:**
+
+```js
 db.<collection>.find()
+```
 
 **Example:**
+
+```js
 db.students.find()
+// Retrieves all documents inside "students"
+```
 
-# Retrieves all documents
-
+---
