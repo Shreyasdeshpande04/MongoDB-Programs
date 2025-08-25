@@ -42,5 +42,3 @@ db.students.updateMany({ age: 21 }, { \$set: { status: "Active" } })
 // All students with age 21 get status = "Active".
 
 ---
-
-Do you also want me to **reformat Delete Operations** the same way with `// comment` under heading?
