@@ -1,159 +1,121 @@
 ---
 
-# 📚 MongoDB Basic Commands
-
 ## 1️⃣ Show Databases
 
-**Syntax:**
+// Displays all databases available in MongoDB
 
-```js
+**Syntax:**
 show dbs
-```
 
 **Example:**
-
-```js
 show dbs
 // Shows all available databases → admin, config, local
-```
 
 ---
 
 ## 2️⃣ Use Database
 
-**Syntax:**
+// Switches to a specific database (creates if not exists)
 
-```js
+**Syntax:**
 use <dbname>
-```
 
 **Example:**
-
-```js
 use studentDB
-// Switches to studentDB (creates if not exists)
-```
+// Switches to studentDB (creates it if it does not exist)
 
 ---
 
 ## 3️⃣ Create Collection
 
-**Syntax:**
+// Creates a new collection inside the current database
 
-```js
+**Syntax:**
 db.createCollection("<name>")
-```
 
 **Example:**
-
-```js
 db.createCollection("students")
 // Creates a new collection named "students"
-```
 
 ---
 
 ## 4️⃣ Drop Database
 
-**Syntax:**
+// Deletes the currently selected database permanently
 
-```js
+**Syntax:**
 db.dropDatabase()
-```
 
 **Example:**
-
-```js
 db.dropDatabase()
-// Deletes the currently selected database
-```
+// Deletes the current database in use
 
 ---
 
 ## 5️⃣ Show Collections
 
-**Syntax:**
+// Displays all collections present in the current database
 
-```js
+**Syntax:**
 show collections
-```
 
 **Example:**
-
-```js
 show collections
 // Lists all collections in the current DB → students, teachers
-```
 
 ---
 
 ## 6️⃣ Drop Collection
 
-**Syntax:**
+// Removes a specific collection from the current database
 
-```js
+**Syntax:**
 db.<collection>.drop()
-```
 
 **Example:**
-
-```js
 db.students.drop()
 // Deletes the "students" collection
-```
 
 ---
 
 ## 7️⃣ Insert One Document
 
-**Syntax:**
+// Inserts a single record/document into a collection
 
-```js
+**Syntax:**
 db.<collection>.insertOne({ key: value })
-```
 
 **Example:**
-
-```js
 db.students.insertOne({ name: "Rahul", age: 22 })
 // Inserts one student record into "students" collection
-```
 
 ---
 
 ## 8️⃣ Insert Many Documents
 
-**Syntax:**
+// Inserts multiple records/documents at once into a collection
 
-```js
-db.<collection>.insertMany([{...}, {...}])
-```
+**Syntax:**
+db.<collection>.insertMany(\[{...}, {...}])
 
 **Example:**
-
-```js
-db.students.insertMany([
-  { name: "Shreyas", age: 21 },
-  { name: "Amit", age: 21 }
+db.students.insertMany(\[
+{ name: "Shreyas", age: 21 },
+{ name: "Amit", age: 21 }
 ])
 // Inserts multiple student records in one go
-```
 
 ---
 
 ## 9️⃣ Find Documents
 
-**Syntax:**
+// Retrieves one or more documents from a collection
 
-```js
+**Syntax:**
 db.<collection>.find()
-```
 
 **Example:**
-
-```js
 db.students.find()
 // Retrieves all documents inside "students"
-```
 
 ---
