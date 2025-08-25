@@ -1,6 +1,10 @@
+---
+
 ## 📘 Cursor Methods
 
 ### 1️⃣ `count()`
+
+// Counts the number of documents that match a query
 
 **Syntax:**
 db.collection.find(query).count()
@@ -13,6 +17,8 @@ db.students.find({ age: { \$gte: 20 } }).count()
 
 ### 2️⃣ `limit(n)`
 
+// Restricts the number of documents returned
+
 **Syntax:**
 db.collection.find(query).limit(n)
 
@@ -24,6 +30,8 @@ db.students.find().limit(5)
 
 ### 3️⃣ `skip(n)`
 
+// Skips a specific number of documents in the result
+
 **Syntax:**
 db.collection.find(query).skip(n)
 
@@ -34,6 +42,8 @@ db.students.find().skip(5)
 ---
 
 ### 4️⃣ `sort({ field: 1 / -1 })`
+
+// Sorts documents in ascending (1) or descending (-1) order
 
 **Syntax:**
 db.collection.find(query).sort({ field: 1 })   // Ascending
@@ -49,6 +59,8 @@ db.students.find().sort({ age: -1 })
 
 ### 1️⃣ `$exists`
 
+// Checks whether a field exists in the document
+
 **Syntax:**
 db.collection.find({ field: { \$exists: true/false } })
 
@@ -60,6 +72,8 @@ db.students.find({ email: { \$exists: true } })
 
 ### 2️⃣ `$type`
 
+// Matches documents based on the BSON type of a field
+
 **Syntax:**
 db.collection.find({ field: { \$type: "<dataType>" } })
 
@@ -70,6 +84,8 @@ db.products.find({ price: { \$type: "number" } })
 ---
 
 ### 3️⃣ `$size`
+
+// Matches arrays with the specified number of elements
 
 **Syntax:**
 db.collection.find({ arrayField: { \$size: n } })
