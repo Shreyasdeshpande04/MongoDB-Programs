@@ -1,0 +1,104 @@
+# 📚 MongoDB Basic Commands
+
+## 1️⃣ Show Databases
+
+**Syntax:**
+show dbs
+
+**Example:**
+show dbs
+
+# Output → admin, config, local
+
+---
+
+## 2️⃣ Use Database
+
+**Syntax:**
+use <dbname>
+
+**Example:**
+use studentDB
+
+# Switches to studentDB (creates if not exists)
+
+---
+
+## 3️⃣ Create Collection
+
+**Syntax:**
+db.createCollection("<name>")
+
+**Example:**
+db.createCollection("students")
+
+---
+
+## 4️⃣ Drop Database
+
+**Syntax:**
+db.dropDatabase()
+
+**Example:**
+db.dropDatabase()
+
+# Deletes the current database
+
+---
+
+## 5️⃣ Show Collections
+
+**Syntax:**
+show collections
+
+**Example:**
+show collections
+
+# Output → students, teachers
+
+---
+
+## 6️⃣ Drop Collection
+
+**Syntax:**
+db.<collection>.drop()
+
+**Example:**
+db.students.drop()
+
+---
+
+## 7️⃣ Insert One Document
+
+**Syntax:**
+db.<collection>.insertOne({ key: value })
+
+**Example:**
+db.students.insertOne({ name: "Rahul", age: 22 })
+
+---
+
+## 8️⃣ Insert Many Documents
+
+**Syntax:**
+db.<collection>.insertMany(\[{...}, {...}])
+
+**Example:**
+db.students.insertMany(\[
+{ name: "Shreyas", age: 21 },
+{ name: "Amit", age: 21 },
+.....
+])
+
+---
+
+## 9️⃣ Find Documents
+
+**Syntax:**
+db.<collection>.find()
+
+**Example:**
+db.students.find()
+
+# Retrieves all documents
+
